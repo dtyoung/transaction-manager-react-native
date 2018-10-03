@@ -7,6 +7,7 @@ import { FloatingAction } from 'react-native-floating-action';
 import { withNavigation } from 'react-navigation';
 import { loadTransactionsByDate } from '../actions/addTransaction';
 import { loadCategories } from '../actions/category';
+import { loginUserCompleted } from '../actions/auth';
 class TransactionOverviewScreen2 extends Component {
     
     static navigationOptions = ({navigation}) => ({
@@ -16,6 +17,7 @@ class TransactionOverviewScreen2 extends Component {
     });
 
     componentDidMount() {
+        this.props.loginUserCompleted();
         this.props.loadTransactionByDate();
         this.props.loadCategories();
     }
@@ -74,7 +76,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         loadTransactionByDate: () => dispatch(loadTransactionsByDate()),
-        loadCategories: () => dispatch(loadCategories())
+        loadCategories: () => dispatch(loadCategories()),
+        loginUserCompleted: () => dispatch(loginUserCompleted())
     }
 }
 

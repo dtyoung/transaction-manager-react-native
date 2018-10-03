@@ -10,6 +10,7 @@ import {
   TransactionDetailScreen,
   UpdateTransactionScreen
 } from '../screens'
+import DrawerContainer from './DrawerContainer';
 
 const AuthStack = createStackNavigator({
   Home: { screen: LoginScreen },
@@ -81,7 +82,8 @@ const AppDrawer = createDrawerNavigator(
   Categories: CategoryStack,
   Analytics: AnalyticsStack
 },{
-  initialRouteName: 'Transactions'
+  initialRouteName: 'Transactions',
+  contentComponent: DrawerContainer
 });
 
 

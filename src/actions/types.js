@@ -1,8 +1,10 @@
+// Authentication Types
 export const EMAIL_CHANGED = 'email_changed';
 export const PASSWORD_CHANGED = 'password_changed';
 export const LOGIN_USER_SUCCESS = 'login_user_success';
 export const LOGIN_USER_FAIL = 'login_user_fail';
 export const ATTEMPTING_LOGIN = 'attempting_login';
+export const LOGIN_USER_COMPLETED = 'login_user_completed';
 
 // Add Transaction Types
 export const TRANSACTION_VALUE_CHANGED = 'transaction_value_changed';

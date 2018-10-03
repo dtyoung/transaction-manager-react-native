@@ -4,7 +4,8 @@ import {
     PASSWORD_CHANGED,
     LOGIN_USER_SUCCESS,
     LOGIN_USER_FAIL,
-    ATTEMPTING_LOGIN
+    ATTEMPTING_LOGIN,
+    LOGIN_USER_COMPLETED
 } from './types';
 
 export const emailChanged = (text) => {
@@ -32,6 +33,12 @@ export const loginUser = (email, password) => {
             .catch(() => loginUserFail(dispatch));
     };
 };
+
+export const loginUserCompleted = () => {
+    return {
+        type: LOGIN_USER_COMPLETED
+    }
+}
 
 const loginUserFail = (dispatch) => {
     dispatch({ type: LOGIN_USER_FAIL })
