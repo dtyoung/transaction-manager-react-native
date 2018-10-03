@@ -144,7 +144,8 @@ const styles = StyleSheet.create({
     },
     touchableStyle: {
         flex: 2,
-        justifyContent: 'center'
+        flexDirection: 'row',
+        alignItems: 'center'
     },
     textStyle: {
         color: '#000',
@@ -155,5 +156,6 @@ const styles = StyleSheet.create({
         fontSize: 18,
         lineHeight: 30,
         flex: 2,
+        textAlign: 'left'
     },
 });

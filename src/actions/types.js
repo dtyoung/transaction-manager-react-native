@@ -5,6 +5,13 @@ export const LOGIN_USER_SUCCESS = 'login_user_success';
 export const LOGIN_USER_FAIL = 'login_user_fail';
 export const ATTEMPTING_LOGIN = 'attempting_login';
 export const LOGIN_USER_COMPLETED = 'login_user_completed';
+export const LOGOUT_USER = 'logout_user';
+export const CREATE_ACCOUNT_EMAIL_CHANGED = 'create_account_email_changed';
+export const CREATE_ACCOUNT_PASSWORD_CHANGED = 'create_account_password_changed';
+export const CREATE_ACCOUNT_CONFIRM_PASSWORD_CHANGED = 'create_account_confirm_password_changed';
+export const ATTEMPT_CREATE_ACCOUNT = 'attempt_create_account';
+export const CREATE_ACCOUNT_SUCCESS = 'create_account_success';
+export const CREATE_ACCOUNT_FAIL = 'create_account_fail';
 
 // Add Transaction Types
 export const TRANSACTION_VALUE_CHANGED = 'transaction_value_changed';

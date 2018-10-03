@@ -3,7 +3,8 @@ import {
     CATEGORY_ICON_CHANGED,
     CATEGORY_ADDED,
     REDIRECT_AFTER_ADD_CATEGORY,
-    UPDATE_CATEGORY_DATA
+    UPDATE_CATEGORY_DATA,
+    LOGOUT_USER
 } from '../actions/types';
 
 import { CATEGORY_ICONS } from '../data/categoryIcons';
@@ -28,6 +29,8 @@ export default (state = INITIAL_STATE, action) => {
             return { ...state, shouldRedirect: false};
         case UPDATE_CATEGORY_DATA:
             return { ...state, categories: action.payload };
+        case LOGOUT_USER:
+            return { ...state, categories: [] }    
         default:
             return state;
     }

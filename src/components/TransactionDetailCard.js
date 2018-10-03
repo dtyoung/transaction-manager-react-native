@@ -32,7 +32,7 @@ class TransactionDetailCard extends Component {
                 </CardSection>
                 <CardSection>
                     <TransactionDetailRow 
-                        iconName='ev-station'
+                        iconName='event'
                         text={this.props.date}
                     />
                 </CardSection>

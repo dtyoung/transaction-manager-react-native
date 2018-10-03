@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, FlatList } from 'react-native'
+import { View, FlatList, Text, StyleSheet } from 'react-native'
 import { connect } from 'react-redux';
 import { Icon } from 'react-native-elements'
 import TransactionCard from '../components/TransactionCard'
@@ -26,6 +26,13 @@ class TransactionOverviewScreen2 extends Component {
     renderTransactionCards() {
         const { transactions } = this.props
         
+        if(transactions === null) {
+            return (
+                <View style={styles.loadingContainerStyle}>
+                    <Text style={styles.loadingText}>Your transactions are currently loading. Please hold tight!</Text>
+                </View>
+            )
+        }
         if(transactions.length != 0) {
             const transactionCards = (
                 <FlatList 
@@ -36,13 +43,13 @@ class TransactionOverviewScreen2 extends Component {
                     keyExtractor={(item, index) => item[0].date}
                 />
             )
-
-            // const transactionCards = transactions.map(dateBucket => (
-            //     <TransactionCard key={'transaction-card' + dateBucket[0].date} transactions={dateBucket}/>
-            // ))
             return transactionCards;
         } else {
-            return null;
+            return (
+                <View style={styles.loadingContainerStyle}>
+                    <Text style={styles.loadingText}>You don't have any transactions. Add some using the button below.</Text>
+                </View>
+            );
         }
     }
   
@@ -84,3 +91,17 @@ const mapDispatchToProps = (dispatch) => {
 const TransactionOverviewScreen = connect(mapStateToProps, mapDispatchToProps)(withNavigation(TransactionOverviewScreen2));
 
 export { TransactionOverviewScreen };
+
+const styles = StyleSheet.create({
+    loadingContainerStyle: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    loadingText: {
+        fontSize: 18,
+        color: '#666666',
+        textAlign: 'center'
+    }
+})

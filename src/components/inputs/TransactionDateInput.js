@@ -12,7 +12,7 @@ class TransactionDateInput2 extends Component {
     }
 
     render() {
-        const { containerStyle, iconStyle, inputStyle } = styles;
+        const { containerStyle, iconStyle, datePickerCustomStyle } = styles;
         const { dateChanged } = this.props;
         return (
             <View style={containerStyle}>
@@ -24,8 +24,9 @@ class TransactionDateInput2 extends Component {
                     containerStyle={iconStyle}
                     size={30}
                 />
-                <DatePicker 
-                    style={{flex: 2, width: 200}}
+                <DatePicker
+                    style={{ flex: 2, width: 200}}
+                    customStyles={{ dateInput: { borderWidth: 0, alignItems: 'flex-start', paddingLeft: 3,  } }}
                     date={this.props.date}
                     mode="date"
                     showIcon={false}
@@ -74,5 +75,5 @@ const styles = StyleSheet.create({
         fontSize: 18,
         lineHeight: 30,
         flex: 2,
-    },
+    }
 });

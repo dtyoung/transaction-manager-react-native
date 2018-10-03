@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardSection, Input, Button } from '../common';
+import { connect } from 'react-redux';
+
 
 class CreateAccountForm extends Component {
     render() {
@@ -34,5 +36,11 @@ class CreateAccountForm extends Component {
         );
     }
 }
+
+// const mapStateToProps = (state) => {
+//     return {
+//         email: state.
+//     }
+// }
 
 export default CreateAccountForm;
