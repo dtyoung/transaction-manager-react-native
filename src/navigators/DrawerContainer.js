@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { logout } from '../actions/navigation';
+import { connect } from 'react-redux';
 
 class DrawerContainer extends Component {
 
@@ -23,7 +24,7 @@ class DrawerContainer extends Component {
                         Analytics
                     </Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => logout(navigation)}>
+                <TouchableOpacity onPress={() => this.props.logout(navigation)}>
                     <Text style={styles.drawerItem}>
                         Logout
                     </Text>
@@ -34,7 +35,13 @@ class DrawerContainer extends Component {
 
 }
 
-export default DrawerContainer;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        logout: (navigation) => dispatch(logout(navigation))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(DrawerContainer);
 
 const styles = StyleSheet.create({
     container: {

@@ -23,7 +23,8 @@ const INITIAL_STATE = {
     user: null,
     error: '',
     loading: false,
-    success: false
+    success: false,
+    createSuccess: false
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -50,9 +51,9 @@ export default (state = INITIAL_STATE, action) => {
         case ATTEMPT_CREATE_ACCOUNT:
             return { ...state, loading: true, error: '' }
         case CREATE_ACCOUNT_SUCCESS:
-            return { ...state, createEmail: '', createConfirmPassword: '', createPassword: '', loading: false, sucess: true }
+            return { ...state, createEmail: '', createConfirmPassword: '', createPassword: '', loading: false, createSuccess: true }
         case CREATE_ACCOUNT_FAIL:
-            return { ...state, error: action.payload.error, createConfirmPassword: '', createPassword: ''}
+            return { ...state, error: action.payload, createConfirmPassword: '', createPassword: ''}
         default: 
             return state;
     }

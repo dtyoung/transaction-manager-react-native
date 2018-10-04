@@ -13,10 +13,11 @@ import {
 import DrawerContainer from './DrawerContainer';
 
 const AuthStack = createStackNavigator({
-  Home: { screen: LoginScreen },
+  Login: { screen: LoginScreen },
   CreateAccount: { screen: CreateAccountScreen }
 },
 {
+  initialRouteName: 'Login',
   navigationOptions: {
       headerStyle: {backgroundColor: '#74d419'},
       headerTitleStyle: {
